@@ -1,0 +1,50 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Random Login Form</title>
+
+    
+
+    
+  </head>
+
+  <body>
+
+    <div class="body"></div>
+		<div class="grad"></div>
+
+		
+		<br>
+		<div class="login">
+				<form method="POST" enctype="multipart/form-data">
+    	{% csrf_token %}
+		{{ form.username.errors}}
+    	{{ form.username}}
+	<br>
+		{{ form.password1.errors}}
+    	{{ form.password1}}
+	<br>
+		{{ form.password2.errors}}
+    	{{ form.password2}}
+	<br>
+		{{ form.first_name.errors}}
+    	{{ form.first_name}}
+	<br>
+		{{ form.last_name.errors}}
+    	{{ form.last_name}}
+	<br>
+		{{ form.email.errors}}
+    	{{ form.email}}
+    	<input type="submit" value="Registrarse" id="id1">
+    	<br>
+
+    	
+    </form>
+    <a href="{% url 'cuenta:home' %}" ><input type="button" value="Regresar"></a>
+		</div>
+
+    
+  </body>
+</html>
